@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeu du Juste Prix</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-container">
+    <h1>Jeu du Juste Prix</h1>
+    <p>Devinez le nombre que j'ai choisi entre 1 et 100.</p>
+    
+    <div id="input-area">
+        <input type="number" id="guess-input" placeholder="Votre proposition..." min="1" max="100" autofocus>
+        <button id="guess-button">Deviner</button>
+    </div>
+    
+    <p id="message-area"> </p>
+    
+    <button id="replay-button" class="hidden">Rejouer</button>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
