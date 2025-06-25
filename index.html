@@ -3,23 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jeu du Juste Prix</title>
+<title>Jeu du Juste Prix - Amélioré</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="game-container">
-    <h1>Jeu du Juste Prix</h1>
-    <p>Devinez le nombre que j'ai choisi entre 1 et 100.</p>
-    
-    <div id="input-area">
-        <input type="number" id="guess-input" placeholder="Votre proposition..." min="1" max="100" autofocus>
-        <button id="guess-button">Deviner</button>
+<main>
+    <!-- Étape 1: Configuration du joueur -->
+    <div id="setup-container">
+        <h1>Bienvenue !</h1>
+        <p>Entrez votre pseudo pour commencer.</p>
+        <input type="text" id="player-name-input" placeholder="Votre pseudo..." maxlength="15">
+        <button id="start-button">Commencer à jouer</button>
     </div>
-    
-    <p id="message-area"> </p>
-    
-    <button id="replay-button" class="hidden">Rejouer</button>
-</div>
+
+    <!-- Étape 2: Le jeu principal (caché au début) -->
+    <div id="game-container" class="hidden">
+        <h1>Jeu du Juste Prix</h1>
+        <p>Devinez le nombre entre 1 et 100.</p>
+        <p>Tentatives restantes: <span id="attempts-left">10</span></p>
+        
+        <div id="input-area">
+            <input type="number" id="guess-input" placeholder="Votre proposition..." min="1" max="100" autofocus>
+            <button id="guess-button">Deviner</button>
+        </div>
+        
+        <p id="message-area"> </p>
+
+<!-- Chemin vérifié pour l'image de victoire -->
+<img src="images/victoire.png.jfif" alt="Image de victoire" id="victory-img" class="hidden result-img">
+<!-- Chemin vérifié pour l'image de défaite -->
+<img src="images/vdefaite.png.png" alt="Image de défaite" id="defeat-img" class="hidden result-img">
+
+
+        
+        <button id="replay-button" class="hidden">Rejouer</button>
+    </div>
+
+    <!-- Étape 3: Classement -->
+    <div id="leaderboard-container">
+        <h2>🏆 Classement (Top 3)</h2>
+        <ol id="leaderboard-list">
+            <!-- Le classement sera inséré ici par JavaScript -->
+        </ol>
+    </div>
+</main>
 
 <script src="script.js" defer></script>
 </body>
